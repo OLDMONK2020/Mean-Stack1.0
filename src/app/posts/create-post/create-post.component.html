@@ -1,0 +1,23 @@
+<mat-card>
+    <form (submit)="saveValue(postForm)" #postForm="ngForm">
+        <mat-form-field>
+            <input matInput type="text" [ngModel]="post.title" name="title" #title="ngModel" placeholder="Enter Title"
+                required>
+            <mat-error *ngIf="title.invalid">Please enter a title</mat-error>
+        </mat-form-field>
+        <div>
+            <button mat-stroked-button type="button" (click)="pickedImage.click()">Pick Image</button>
+            <input type="file" #pickedImage (change)="onImageChange($event)">
+            <input type="hidden" [ngModel]="post.imagePath" name="imagePath">
+        </div>
+        <div class="image-preview" *ngIf="imagePreview && imagePreview !== ''">
+            <img [src]="imagePreview">
+        </div>
+        <mat-form-field>
+            <textarea matInput name="content" [ngModel]="post.content" #content="ngModel" placeholder="Enter Content"
+                required rows="6"></textarea>
+            <mat-error *ngIf="content.invalid">Please enter some content</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit">Post value</button>
+    </form>
+</mat-card>

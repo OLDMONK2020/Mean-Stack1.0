@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span [routerLink]="['/']">Mean Stack</span>
+    <div style="margin-left: auto">
+        <button mat-button [routerLink]="['/createposts']" [routerLinkActive]="['mat-accent']" *ngIf="isAuthenticated">Create post</button>
+        <button mat-button [routerLink]="['/login']" [routerLinkActive]="['mat-accent']" *ngIf="!isAuthenticated">Login</button>
+        <button mat-button [routerLink]="['/signup']" [routerLinkActive]="['mat-accent']" *ngIf="!isAuthenticated">Signup</button>
+        <button mat-button [routerLinkActive]="['mat-accent']" *ngIf="isAuthenticated" (click)="signout()">Signout</button>
+    </div>
+</mat-toolbar>

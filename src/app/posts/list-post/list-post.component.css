@@ -1,0 +1,17 @@
+.no-post {
+    margin-top: 15px;
+    font-size : 14px;
+    text-align: center;
+}
+
+.image-section {
+    width: 100%;
+}
+
+.image-section img {
+    width: 100%;
+}
+
+mat-paginator {
+    margin-top: 1rem;
+}
